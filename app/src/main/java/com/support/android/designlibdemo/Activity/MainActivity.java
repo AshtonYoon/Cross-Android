@@ -14,14 +14,10 @@
  * limitations under the License.
  */
 
-package com.support.android.designlibdemo;
+package com.support.android.designlibdemo.Activity;
 
 
-import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -29,16 +25,10 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
+import com.support.android.designlibdemo.Fragment.TransactionFragment;
+import com.support.android.designlibdemo.Fragment.WalletFragment;
+import com.support.android.designlibdemo.R;
 
 /**
  * TODO
@@ -90,23 +80,27 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return MainActivity.PlaceholderFragment.newInstance(position + 1);
+            switch (position){
+                case 0: return WalletFragment.Companion.getInstance();
+                case 1: return TransactionFragment.Companion.getInstance();
+            }
+            return null;
         }
 
         @Override
         public int getCount() {
-            return 3;
+            return 2;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "지갑";
                 case 1:
-                    return "SECTION 2";
+                    return "트랜젝션";
                 case 2:
-                    return "SECTION 3";
+                    return "주소록";
             }
             return null;
         }
