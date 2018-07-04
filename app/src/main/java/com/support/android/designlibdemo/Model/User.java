@@ -4,20 +4,11 @@ import io.realm.RealmObject;
 
 public class User extends RealmObject{
     String email, name, profile, uid;
-    String token;
     private String crossAddress;
 public User(){}
     public User(String email, String name) {
         this.email = email;
         this.name = name;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
     }
 
     public String getUid() {
