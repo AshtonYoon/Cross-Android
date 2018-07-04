@@ -1,7 +1,9 @@
 package com.support.android.designlibdemo.Model;
 
 
-public class WalletFile{
+import io.realm.RealmObject;
+
+public class WalletFile extends RealmObject{
     private String address;
     private String name;
     private String wallet;

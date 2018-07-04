@@ -2,9 +2,10 @@ package com.support.android.designlibdemo.Activity
 
 import android.os.*
 import android.support.v7.app.*
-import com.support.android.designlibdemo.*
 import com.support.android.designlibdemo.Connector.*
 import com.support.android.designlibdemo.Model.*
+import com.support.android.designlibdemo.R
+import io.realm.*
 import kotlinx.android.synthetic.main.activity_create_wallet.*
 
 class CreateWalletActivity: AppCompatActivity() {
@@ -14,6 +15,8 @@ class CreateWalletActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_wallet)
+
+        Realm.init(this)
 
         val symbol = ""
 
@@ -28,7 +31,12 @@ class CreateWalletActivity: AppCompatActivity() {
                                         rb_create_wallet_user_info_open.isChecked )
                         .enqueue(object: Response<WalletFile>(this){
                             override fun setResponseData(code: Int, data: WalletFile?) {
-                                data?.let {  }
+                                data?.let { data ->
+                                    val realm = Realm.getDefaultInstance()
+                                    realm.executeTransaction {
+                                        it.copyFromRealm(data)
+                                    }
+                                }
                             }
                         })
             }
@@ -39,7 +47,5 @@ class CreateWalletActivity: AppCompatActivity() {
     private fun emptyCheck(): Boolean{
         return et_create_wallet_name.text.isNotEmpty() && et_create_wallet_description.text.isNotEmpty() && et_create_wallet_password.text.isNotEmpty()
     }
-
-
 
 }
