@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="0"
+        android:layout_weight="6"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_horizontal">
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_refrigerator"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Model number"
+            android:layout_gravity="center_horizontal"
+            android:textSize="17dp"
+            android:paddingTop="5dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="3"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="등록할 기기의 이름을 입력해주세요"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimary"
+            android:paddingHorizontal="20dp"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Model number"
+            android:layout_marginHorizontal="20dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="20dp">
+
+        <Button
+            android:layout_width="108dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_tint_gradient"
+            android:text="등록"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_gravity="bottom|end"/>
+    </LinearLayout>
+</LinearLayout>

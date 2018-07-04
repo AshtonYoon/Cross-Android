@@ -62,6 +62,7 @@
                             android:layout_toRightOf="@id/detail_symbol"
                             android:gravity="end"
                             android:text="32.0938274347"
+                            android:textSize="17dp"
                             android:textColor="@android:color/white"
                             android:textStyle="bold"
                             android:paddingLeft="4dp"/>
