@@ -19,6 +19,10 @@ class TransactionFragment: Fragment() {
         return recyclerView
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+    }
+
 }
 
 class TransactionAdapter: RecyclerView.Adapter<TransactionViewHolder>(){

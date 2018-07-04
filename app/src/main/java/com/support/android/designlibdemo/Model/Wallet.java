@@ -1,8 +1,6 @@
-package com.support.android.designlibdemo.Connector.model;
+package com.support.android.designlibdemo.Model;
 
-import io.realm.RealmObject;
-
-public class Wallet extends RealmObject{
+public class Wallet{
     private String uid;
     private String owner;
     private String ownerName;

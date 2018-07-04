@@ -1,11 +1,12 @@
-package com.support.android.designlibdemo.Connector.model;
+package com.support.android.designlibdemo.Model;
 
-import io.realm.RealmObject;
+public class User{
 
-public class User extends RealmObject{
     String email, name, profile, uid;
     private String crossAddress;
-public User(){}
+
+    public User(){}
+
     public User(String email, String name) {
         this.email = email;
         this.name = name;
@@ -50,4 +51,5 @@ public User(){}
     public void setCrossAddress(String crossAddress) {
         this.crossAddress = crossAddress;
     }
+
 }

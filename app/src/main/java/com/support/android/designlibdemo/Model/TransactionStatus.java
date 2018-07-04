@@ -1,4 +1,4 @@
-package com.support.android.designlibdemo.Connector.model;
+package com.support.android.designlibdemo.Model;
 
 import java.math.BigInteger;
 

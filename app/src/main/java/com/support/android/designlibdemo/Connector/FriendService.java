@@ -1,6 +1,6 @@
 package com.support.android.designlibdemo.Connector;
 
-import com.support.android.designlibdemo.Connector.model.User;
+import com.support.android.designlibdemo.Model.User;
 
 import java.util.List;
 

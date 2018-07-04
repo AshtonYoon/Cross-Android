@@ -1,9 +1,9 @@
 package com.support.android.designlibdemo.Connector;
 
-import com.support.android.designlibdemo.Connector.model.Coin;
-import com.support.android.designlibdemo.Connector.model.TransactionStatus;
-import com.support.android.designlibdemo.Connector.model.Wallet;
-import com.support.android.designlibdemo.Connector.model.WalletFile;
+import com.support.android.designlibdemo.Model.Coin;
+import com.support.android.designlibdemo.Model.TransactionStatus;
+import com.support.android.designlibdemo.Model.Wallet;
+import com.support.android.designlibdemo.Model.WalletFile;
 
 import java.util.List;
 

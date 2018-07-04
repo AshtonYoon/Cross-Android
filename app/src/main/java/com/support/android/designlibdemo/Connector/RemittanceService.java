@@ -1,7 +1,7 @@
 package com.support.android.designlibdemo.Connector;
 
 
-import com.support.android.designlibdemo.Connector.model.TransactionResult;
+import com.support.android.designlibdemo.Model.TransactionResult;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
