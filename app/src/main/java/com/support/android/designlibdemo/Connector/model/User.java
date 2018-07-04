@@ -1,8 +1,6 @@
 package com.support.android.designlibdemo.Connector.model;
 
-import io.realm.RealmObject;
-
-public class User extends RealmObject{
+public class User{
     String email, name, profile, uid;
     String token;
     private String crossAddress;
