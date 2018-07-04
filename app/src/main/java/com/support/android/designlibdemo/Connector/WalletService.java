@@ -21,23 +21,26 @@ public interface WalletService {
     Call<List<Coin>> getSupportedCoins();
 
     @FormUrlEncoded
-    @POST("wallet/{symbol}/create")
-    Call<WalletFile> createWallet(@Path("symbol") String symbol, @Field("name") String name, @Field("description")  String description, @Field("password")  String password, @Field("major")boolean major);
+    @POST("wallet/")
+    Call<WalletFile> createWallet(@Path("symbol") String symbol, @Field("name") String name, @Field("description")  String description, @Field("password")  String password, @Field("major")boolean major, @Field("visible") boolean visible);
 
     @GET("wallet/list")
     Call<List<Wallet>> getWalletList();
 
-    @GET("wallet/{symbol}/balance")
-    Call<String> getBalance(@Path("symbol") String symbol, @Query("address") String address);
+    @GET("wallet/balance")
+    Call<String> getBalance(@Query("address") String address);
 
-    @GET("wallet/{symbol}/price")
-    Call<String> getPrice(@Path("symbol") String symbol, @Query("address") String address);
+    @GET("wallet/price")
+    Call<String> getPrice(@Query("address") String address);
 
     @GET("wallet/{symbol}/price/all")
-    Call<String> getTotalPrice();
+    Call<String> getTotalPrice(@Path("symbol") String symbol);
 
-    @GET("wallet/{symbol}/lookup")
-    Call<Wallet> getWalletInfo(@Path("symbol") String symbol, @Query("address") String address);
+    @GET("wallet/{symbol}/balance/all")
+    Call<String> getTotalBalance(@Path("symbol") String symbol);
+
+    @GET("wallet")
+    Call<Wallet> getWalletInfo(@Query("address") String address);
 
     @GET("wallet/{symbol}/transaction")
     Call<TransactionStatus> getTransactionStatus(@Path("symbol") String symbol, @Query("hash") String hash);
@@ -45,6 +48,9 @@ public interface WalletService {
     @GET("wallet/{symbol}/transaction/count")
     Call<Integer> getTransactionCount(@Path("symbol") String symbol, @Query("address") String address);
 
-    @GET("wallet/{symbol}/transaction/list")
-    Call<List<TransactionStatus>> transactionList(@Path("symbol") String symbol, @Query("address") String address);
+    @GET("/wallet/transaction/list")
+    Call<List<TransactionStatus>> addressTransactionList(@Query("address") String address);
+
+    @GET("/transaction/list")
+    Call<List<TransactionStatus>> transactionList();
 }
