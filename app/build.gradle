@@ -38,6 +38,7 @@ dependencies {
     api 'com.squareup.okhttp3:okhttp:3.10.0'
     api 'com.squareup.retrofit2:converter-gson:2.4.0'
 
+    implementation 'com.android.support:support-v4:27.1.1'
 }
 
 apply plugin: 'realm-android'
